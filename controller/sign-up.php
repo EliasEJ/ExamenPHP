@@ -20,7 +20,6 @@ if(isset($_POST['email'])) {
     $nickname = sanitizeString($_POST['nickname']);
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
-
     signup($email, $nickname, $password1, $password2);
 }
 
@@ -46,8 +45,10 @@ function signup($email, $nickname, $password1, $password2) {
 
     if (!empty($errors)) return;
 
-    $md5Hash = md5($password1);
-    insertNewUser($email, $nickname, $md5Hash);
+    // ex11
+    // Encriptar password amb SHA512 
+    $passEnriptada = password_hash($password1, PASSWORD_DEFAULT);
+    insertNewUser($email, $nickname, $passEnriptada);
     startSession($email, true);
     redirectHome();
 }
