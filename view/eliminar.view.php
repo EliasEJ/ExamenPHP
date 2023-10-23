@@ -1,4 +1,5 @@
 <?php require_once("../controller/eliminar.php")?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,5 +13,6 @@
         <input type="text" name="user" id="user">
         <button type="submit">Baixa</button>
     </form>
+<?php enviar()?>
 </body>
 </html>
