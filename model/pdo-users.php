@@ -314,3 +314,19 @@ function clearResetToken($userId)
     setResetToken($userId, "");
 }
 
+//ex 13
+    function modificarPass($id, $password){
+
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
+        $con = getConnection();
+        try {
+            $statement = $con->prepare("UPDATE users SET password = :password WHERE id = :id");
+            $statement->bindParam(':id', $id);
+            $statement->bindParam(':password', $password);
+    
+            $statement->execute();
+        } catch(PDOException $e){
+            echo "Error: " . $e->getMessage();
+        }
+    }
