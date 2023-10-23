@@ -1,3 +1,4 @@
+<!-- ex6 -->
 <?php
 require ("../view/eliminar.view.php");
 require_once("../model/pdo-users.php");

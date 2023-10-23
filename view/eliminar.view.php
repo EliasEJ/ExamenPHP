@@ -1,5 +1,5 @@
 <?php require_once("../controller/eliminar.php")?>
-
+<!-- ex6 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
