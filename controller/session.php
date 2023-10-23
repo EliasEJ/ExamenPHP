@@ -33,10 +33,11 @@ function startSessionByUserId($userId)
     $_SESSION["userId"] = $userId;
 }
 
+//ex 9
 function setSessionLifeTime()
 {    
-    ini_set('session.gc_maxlifetime', 1800);
-    ini_set('session.cookie-lifetime', 1800);
+    ini_set('session.gc_maxlifetime', 900);
+    ini_set('session.cookie-lifetime', 900);
 }
 
 /**

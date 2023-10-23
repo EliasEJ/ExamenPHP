@@ -314,6 +314,22 @@ function clearResetToken($userId)
     setResetToken($userId, "");
 }
 
+function baixa($userId, $email){
+    $con = getConnection();
+    try {
+        $statement = $con->prepare("DELETE FROM users WHERE email = :email");
+        $statement->bindParam("email", $email, PDO::PARAM_STR);
+        $statement->bindParam('userId', $userId, PDO::PARAM_INT);
+
+
+        $statement->execute();
+
+    } catch(PDOException $e){
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+
 //ex 13
     function modificarPass($id, $password){
 
@@ -321,7 +337,7 @@ function clearResetToken($userId)
 
         $con = getConnection();
         try {
-            $statement = $con->prepare("UPDATE users SET password = :password WHERE id = :id");
+            $statement = $con->prepare("UPDATE users SET password = :password WHERE id = :userId");
             $statement->bindParam(':id', $id);
             $statement->bindParam(':password', $password);
     

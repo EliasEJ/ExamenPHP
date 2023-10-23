@@ -22,7 +22,7 @@
 
 <body>
 
-<?php require_once '../controller/navbar.php' ?>
+<?php require_once '../controller/navbar.php'?>
 
     <main class="container">
         <div class="row justify-content-center h-100">

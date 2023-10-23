@@ -3,9 +3,11 @@
 require_once '../model/pdo-articles.php';
 require_once '../controller/session.php';
 
-$postsPerPage = 10;
+$postsPerPage = isset($_GET['postPerPage']) ? abs(intval($_GET['postPerPage'])) : 10;
 
-$orderBy = 'date-desc';
+//$postsPerPage = 10;
+
+$orderBy = isset($_GET['orderBy']);
 
 $searchTerm = "";
 if (isset($_GET['search'])) $searchTerm = $_GET['search'];
